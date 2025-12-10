@@ -1,9 +1,11 @@
-#ifndef ENCODER_H
-#define ENCODER_H
+#ifndef DECODER_H
+#define DECODER_H
 
 #include <string>
 
-char intToHexChar(int n);
-std::string quotedPrintableEncode(const std::string& input);
+// Прототипы функций
+bool isHexDigit(char c);
+int hexCharToInt(char c);
+std::string quotedPrintableDecode(const std::string& encoded);
 
 #endif
