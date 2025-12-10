@@ -26,25 +26,19 @@
 ### Windows (MinGW)
 
 ```bash
-g++ -o qpdecode.exe qpdecode.cpp
-```
-
-### Windows (Visual Studio)
-
-```bash
-cl /EHsc qpdecode.cpp
+g++ -o qp.exe qp.cpp encoder.cpp decoder.cpp
 ```
 
 ### Linux / macOS
 
 ```bash
-g++ -o qpdecode qpdecode.cpp
+g++ -o qp qp.cpp encoder.cpp decoder.cpp
 ```
 
 ### Рекомендуемая оптимизация
 
 ```bash
-g++ -O2 -o qpdecode qpdecode.cpp
+g++ -O2 -o qp.exe qp.cpp encoder.cpp decoder.cpp
 ```
 
 ---
