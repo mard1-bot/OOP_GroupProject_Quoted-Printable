@@ -1,15 +1,16 @@
 #include <iostream>
-#include <windows.h>
-#include <io.h>
-#include <fcntl.h>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <sstream>
-#include "encoder.h"
-#include "decoder.h"
 #include <iterator>
 
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
+#include "encoder.h"
+#include "decoder.h"
 
 using namespace std;
 
@@ -52,10 +53,11 @@ void writeFile(const string& path, const string& data) {
 }
 
 int main(int argc, char* argv[]) {
-    //Поддержка кириллицы
+    //Поддержка кириллицы, если Windows
+#ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
-
+#endif
     if (argc == 1) {
         printHelp(argv[0]);
         return 0;
